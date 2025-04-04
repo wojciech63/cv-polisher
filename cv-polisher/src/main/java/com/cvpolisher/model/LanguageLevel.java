@@ -1,5 +1,4 @@
-package com.cvpolisher;
-
+package com.cvpolisher.model;
 public class LanguageLevel {
     private String language;
     private String languageLevel;

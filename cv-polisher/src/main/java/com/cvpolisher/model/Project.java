@@ -1,5 +1,4 @@
-package com.cvpolisher;
-
+package com.cvpolisher.model;
 import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;

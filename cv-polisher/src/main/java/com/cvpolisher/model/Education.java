@@ -1,36 +1,49 @@
-package com.cvpolisher;
+package com.cvpolisher.model;
 import java.time.YearMonth;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class WorkExperience {
-    private String jobTitle;
-    private String companyName;
+public class Education {
+    private String fieldOfStudy;
+    private String degreeTitle;
+    private String schoolName;
     private String location;
     private java.time.YearMonth startDate;
     private java.time.YearMonth endDate;
     List<String> descriptionPoints = new ArrayList<>();
 
-    public WorkExperience(String jobTitle, String companyName, String location, YearMonth startDate) {
-        this.jobTitle = jobTitle;
-        this.companyName = companyName;
+    public Education(String fieldOfStudy, String degreeTitle, String schoolName, String location, YearMonth startDate,
+    YearMonth endDate) {
+        this.fieldOfStudy = fieldOfStudy;
+        this.degreeTitle = degreeTitle;
+        this.schoolName = schoolName;
         this.location = location;
         this.startDate = startDate;
+        this.endDate = endDate;
+    }   
+    
+    public String getFieldOfStudy() {
+        return fieldOfStudy;
     }
 
-    public String getJobTitle() {
-        return jobTitle;
+    public void setFieldOfStudy(String fieldOfStudy) {
+        this.fieldOfStudy = fieldOfStudy;
     }
 
-    public void setJobTitle(String jobTitle) {
-        this.jobTitle = jobTitle;
+    public String getDegreeTitle() {
+        return degreeTitle;
     }
 
-    public String getCompanyName() {
-        return companyName;
+    public void setDegreeTitle(String degreeTitle) {
+        this.degreeTitle = degreeTitle;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public String getSchoolName() {
+        return schoolName;
+    }
+
+    public void setSchoolName(String schoolName) {
+        this.schoolName = schoolName;
     }
 
     public String getLocation() {
@@ -65,9 +78,4 @@ public class WorkExperience {
         this.descriptionPoints = descriptionPoints;
     }
 
-    public void addDescriptionPoint(String point){
-        if (point != null && !point.trim().isEmpty()){
-            this.descriptionPoints.add(point);
-        }
-    }
 }

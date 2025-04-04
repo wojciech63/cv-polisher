@@ -1,5 +1,4 @@
-package com.cvpolisher;
-import java.time.YearMonth;
+package com.cvpolisher.model;
 
 public class Certification {
     private String certificateName;
