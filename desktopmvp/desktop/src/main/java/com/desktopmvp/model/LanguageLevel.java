@@ -1,4 +1,4 @@
-package com.cvpolisher.model;
+package com.desktopmvp.model;
 public class LanguageLevel {
     private String language;
     private String languageLevel;

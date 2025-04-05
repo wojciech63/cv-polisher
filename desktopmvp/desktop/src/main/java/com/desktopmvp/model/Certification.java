@@ -1,4 +1,4 @@
-package com.cvpolisher.model;
+package com.desktopmvp.model;
 
 public class Certification {
     private String certificateName;

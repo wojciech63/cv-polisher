@@ -1,0 +1,10 @@
+com/desktopmvp/model/Certification.class
+com/desktopmvp/model/WorkExperience.class
+com/desktopmvp/DbVarStore.class
+com/desktopmvp/model/CV.class
+com/desktopmvp/DBconnector.class
+com/desktopmvp/App.class
+com/desktopmvp/model/Project.class
+com/desktopmvp/model/LanguageLevel.class
+com/desktopmvp/model/Education.class
+com/desktopmvp/ContactInfo.class

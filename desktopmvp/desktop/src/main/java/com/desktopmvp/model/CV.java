@@ -1,5 +1,7 @@
-package com.cvpolisher.model;
+package com.desktopmvp.model;
 import java.util.*;
+
+import com.desktopmvp.ContactInfo;
 
 public class CV {
     private ContactInfo contactInfo;

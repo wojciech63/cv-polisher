@@ -1,4 +1,4 @@
-package com.cvpolisher.model;
+package com.desktopmvp.model;
 import java.time.YearMonth;
 import java.util.*;
 

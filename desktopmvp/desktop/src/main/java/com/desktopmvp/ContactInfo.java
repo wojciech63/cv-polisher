@@ -1,4 +1,4 @@
-package com.cvpolisher.model;
+package com.desktopmvp;
 
 public class ContactInfo {
     private String fullName;
