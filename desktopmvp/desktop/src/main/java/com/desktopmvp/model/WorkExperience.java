@@ -2,6 +2,7 @@ package com.desktopmvp.model;
 import java.time.YearMonth;
 import java.util.*;
 
+
 public class WorkExperience {
     private String jobTitle;
     private String companyName;
