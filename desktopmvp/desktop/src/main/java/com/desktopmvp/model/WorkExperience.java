@@ -1,15 +1,24 @@
 package com.desktopmvp.model;
 import java.time.YearMonth;
 import java.util.*;
+import jakarta.persistence.*;
 
-
+@Entity
+@Table (name = "WorkExperience")
 public class WorkExperience {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String jobTitle;
     private String companyName;
     private String location;
     private java.time.YearMonth startDate;
     private java.time.YearMonth endDate;
     List<String> descriptionPoints = new ArrayList<>();
+
+    public WorkExperience() {
+    }
+
 
     public WorkExperience(String jobTitle, String companyName, String location, YearMonth startDate) {
         this.jobTitle = jobTitle;

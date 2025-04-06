@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd"
+             version="3.1">
+
+  <persistence-unit name="myPersistenceUnit" transaction-type="RESOURCE_LOCAL"> <!-- Choose a name -->
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+    <!-- List entity classes explicitly (alternative: <exclude-unlisted-classes>false</exclude-unlisted-classes> scans) -->
+    <class>com.yourcompany.myhibernateapp.entity.Student</class>
+    <!-- Add more classes -->
+
+    <properties>
+      <!-- Database connection settings -->
+      <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/> <!-- CHANGE -->
+      <property name="jakarta.persistence.jdbc.url" value= DbVarStore.getUrl();/> <!-- CHANGE -->
+      <property name="jakarta.persistence.jdbc.user" value="your_db_user"/> <!-- CHANGE -->
+      <property name="jakarta.persistence.jdbc.password" value="your_db_password"/> <!-- CHANGE -->
+
+      <!-- Hibernate specific properties -->
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/> <!-- CHANGE -->
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.format_sql" value="true"/>
+      <property name="hibernate.hbm2ddl.auto" value="update"/> <!-- CHANGE as needed -->
+
+      <!-- Optional: Connection Pooling (e.g., HikariCP) - Recommended for production -->
+      <!-- <property name="hibernate.connection.provider_class" value="org.hibernate.hikaricp.internal.HikariCPConnectionProvider"/> -->
+      <!-- <property name="hibernate.hikari.dataSourceClassName" value="com.mysql.cj.jdbc.MysqlDataSource"/> -->
+      <!-- <property name="hibernate.hikari.dataSource.url" value="${jakarta.persistence.jdbc.url}"/> -->
+      <!-- <property name="hibernate.hikari.dataSource.user" value="${jakarta.persistence.jdbc.user}"/> -->
+      <!-- <property name="hibernate.hikari.dataSource.password" value="${jakarta.persistence.jdbc.password}"/> -->
+      <!-- <property name="hibernate.hikari.maximumPoolSize" value="10"/> -->
+      <!-- <property name="hibernate.hikari.idleTimeout" value="30000"/> -->
+
+    </properties>
+  </persistence-unit>
+</persistence>
