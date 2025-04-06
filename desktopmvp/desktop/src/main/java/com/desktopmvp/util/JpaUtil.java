@@ -1,4 +1,4 @@
-package util;
+package com.desktopmvp.util;
 
 import jakarta.persistence.*;
 import java.util.*;
@@ -23,8 +23,8 @@ public class JpaUtil {
                 String dbPass = DbVarStore.getDB_PASSWORD();
 
                 properties.put("jakarta.persistence.jdbc.url", dbUrl);
-                properties.put("jakarta.persistence.jbdc.user", dbUser);
-                properties.put("jakarta.persistence.jbdc.password", dbPass); 
+                properties.put("jakarta.persistence.jdbc.user", dbUser);
+                properties.put("jakarta.persistence.jdbc.password", dbPass); 
 
                 factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME, properties);
             } catch (Throwable ex){
@@ -37,5 +37,16 @@ public class JpaUtil {
             }
         }
         return factory;
+    }
+
+    public static void shutdown(){
+        if (factory != null && factory.isOpen()){
+            System.out.println("Closing EntityManagerFactory...");
+            factory.close();
+            System.out.println("EntityManagerFactory closed");
+            factory = null;
+        } else {
+            System.out.println("EntityManagerFactory already closed or not initialized");
+        }
     }
 }

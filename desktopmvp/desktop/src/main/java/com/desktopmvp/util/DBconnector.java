@@ -1,4 +1,4 @@
-package com.desktopmvp;
+package com.desktopmvp.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
