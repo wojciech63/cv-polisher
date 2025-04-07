@@ -8,11 +8,17 @@ import jakarta.persistence.*;
 public class WorkExperience {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+    @Column(name = "job_title", nullable = false)
     private String jobTitle;
+    @Column(name = "company", nullable = false)
     private String companyName;
+    @Column(name = " location")
     private String location;
+    @Column(name = "start_date", nullable = false)
     private java.time.YearMonth startDate;
+    @Column(name = "endDate")
     private java.time.YearMonth endDate;
     List<String> descriptionPoints = new ArrayList<>();
 

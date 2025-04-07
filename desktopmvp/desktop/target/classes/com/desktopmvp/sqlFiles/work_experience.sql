@@ -2,7 +2,7 @@ CREATE TABLE work_experience (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     job_title VARCHAR(255) NOT NULL,
     company VARCHAR(255) NOT NULL,
-    start_date DATE,
+    start_date DATE NOT NULL,
     end_date DATE,
     location VARCHAR(255),
     description TEXT,
