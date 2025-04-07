@@ -2,7 +2,6 @@ package com.desktopmvp.util;
 
 import jakarta.persistence.*;
 import java.util.*;
-import com.desktopmvp.*;
 
 public class JpaUtil {
     private static final String PERSISTENCE_UNIT_NAME = "myPersistenceUnit";

@@ -11,4 +11,3 @@ linkedin_url TEXT,
 github_url TEXT,
 any_url TEXT
 );
-
