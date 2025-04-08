@@ -8,19 +8,23 @@ import jakarta.persistence.*;
 public class WorkExperience {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id", columnDefinition = "BIGINT")
     private Long id;
-    @Column(name = "job_title", nullable = false)
+    @Column(name = "job_title", nullable = false, columnDefinition = "VARCHAR(255)")
     private String jobTitle;
-    @Column(name = "company", nullable = false)
+    @Column(name = "company", nullable = false, columnDefinition = "VARCHAR(255)")
     private String companyName;
-    @Column(name = " location")
+    @Column(name = " location", columnDefinition = "VARCHAR(255)")
     private String location;
-    @Column(name = "start_date", nullable = false)
+    @Column(name = "start_date", nullable = false, columnDefinition = "DATE")
     private java.time.YearMonth startDate;
-    @Column(name = "endDate")
+    @Column(name = "endDate", columnDefinition = "DATE")
     private java.time.YearMonth endDate;
     List<String> descriptionPoints = new ArrayList<>();
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "contact_info_id", nullable = false,
+    foreignKey = @ForeignKey(name = "fk_work_experience_contact_info"))
+    private ContactInfo contactInfo;
 
     public WorkExperience() {
     }
