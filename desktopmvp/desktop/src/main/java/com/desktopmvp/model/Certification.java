@@ -1,5 +1,7 @@
 package com.desktopmvp.model;
 
+import java.time.LocalDate;
+
 import javax.annotation.processing.Generated;
 
 @Entity
@@ -14,8 +16,8 @@ public class Certification {
     @Column(name = "issuer", columnDefinition = "VARCHAR(255)")
     private String issuedBy;
     @Column(name = "date", columnDefinition = "DATE")
-    private java.time.YearMonth date;
-    @Column(name = "description", columnDefinition = )
+    private LocalDate date;
+    @Column(name = "description", columnDefinition = "VARCHAR(255)")
     private String description;
     
     public Certification(String certificateName, String issuedBy) {

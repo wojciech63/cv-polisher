@@ -1,15 +1,26 @@
 package com.desktopmvp.model;
+import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
-
+@Entity
+@Table (name = "Education")
 public class Education {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", columnDefinition = "BIGINT", nullable = "false")
+    private long id;
+    @Column(name = "field_of_study", columnDefinition = "TEXT")
     private String fieldOfStudy;
+    @Column (name = "degree_title", columnDefinition = "TEXT")
     private String degreeTitle;
+    @Column (name = "school_name", columnDefinition = "TEXT")
     private String schoolName;
+    @Column (name = "location", columnDefinition = "TEXT")
     private String location;
-    private java.time.YearMonth startDate;
-    private java.time.YearMonth endDate;
+
+    private LocalDate startDate;
+    private LocalDate endDate;
     List<String> descriptionPoints = new ArrayList<>();
 
     public Education(String fieldOfStudy, String degreeTitle, String schoolName, String location, YearMonth startDate,
@@ -21,6 +32,7 @@ public class Education {
         this.startDate = startDate;
         this.endDate = endDate;
     }   
+
     
     public String getFieldOfStudy() {
         return fieldOfStudy;
@@ -76,6 +88,14 @@ public class Education {
 
     public void setDescriptionPoints(List<String> descriptionPoints) {
         this.descriptionPoints = descriptionPoints;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
 }

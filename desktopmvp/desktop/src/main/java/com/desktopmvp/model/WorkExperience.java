@@ -1,4 +1,5 @@
 package com.desktopmvp.model;
+import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.*;
 import jakarta.persistence.*;
@@ -17,9 +18,9 @@ public class WorkExperience {
     @Column(name = " location", columnDefinition = "VARCHAR(255)")
     private String location;
     @Column(name = "start_date", nullable = false, columnDefinition = "DATE")
-    private java.time.YearMonth startDate;
+    private LocalDate startDate;
     @Column(name = "endDate", columnDefinition = "DATE")
-    private java.time.YearMonth endDate;
+    private LocalDate endDate;
     List<String> descriptionPoints = new ArrayList<>();
     @ManyToOne(optional = false)
     @JoinColumn(name = "contact_info_id", nullable = false,

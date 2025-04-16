@@ -1,4 +1,5 @@
 package com.desktopmvp.model;
+import java.time.LocalDate;
 import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +9,8 @@ public class Project {
     private String description;
     private List<String> technologies = new ArrayList<>();
     private String projectURL;
-    private java.time.YearMonth startDate;
-    private java.time.YearMonth endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     
     public Project(String projectTitle, String description, YearMonth startDate) {
         this.projectTitle = projectTitle;
